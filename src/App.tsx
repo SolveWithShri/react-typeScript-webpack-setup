@@ -5,6 +5,7 @@ import IMAGE_SVG from "../assets/React.svg";
 import { ClickCounter } from "./Counter";
 
 export const App = () => {
+  // const num = 0;
   return (
     <>
       <h1>HI ---  </h1>
