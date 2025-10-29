@@ -7,17 +7,17 @@ import reactPlugin from 'eslint-plugin-react';
 import reactHooks from 'eslint-plugin-react-hooks';
 import importPlugin from 'eslint-plugin-import';
 import jsxA11y from 'eslint-plugin-jsx-a11y';
+import prettierPlugin from 'eslint-plugin-prettier';
+import prettierConfig from 'eslint-config-prettier';
 
 export default [
   // Ignore build artifacts
   {
-    ignores: [
-      'node_modules/**',
-      'dist/**',
-      'build/**',
-      'coverage/**',
-    ],
+    ignores: ['node_modules/**', 'dist/**', 'build/**', 'coverage/**'],
   },
+
+  // Disable ESLint rules that would conflict with Prettier
+  ...prettierConfig,
 
   {
     files: ['**/*.{ts,tsx,js,jsx,json}'],
@@ -39,6 +39,7 @@ export default [
       'react-hooks': reactHooks,
       import: importPlugin,
       'jsx-a11y': jsxA11y,
+      prettier: prettierPlugin,
     },
     rules: {
       // TS
@@ -46,6 +47,8 @@ export default [
       '@typescript-eslint/no-unused-vars': ['error'],
       '@typescript-eslint/no-var-requires': 'off',
       '@typescript-eslint/explicit-module-boundary-types': 'off',
+      semi: ['error', 'always'],
+      '@typescript-eslint/semi': ['error', 'always'],
 
       // React
       'react/prop-types': 'off',
@@ -53,6 +56,9 @@ export default [
       'react/jsx-uses-react': 'off',
       'react-hooks/rules-of-hooks': 'error',
       'react-hooks/exhaustive-deps': 'warn',
+
+      // Prettier formatting as lint rule
+      'prettier/prettier': 'warn',
     },
   },
 ];
