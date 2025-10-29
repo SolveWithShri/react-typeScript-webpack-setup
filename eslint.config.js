@@ -8,7 +8,7 @@ import reactHooks from 'eslint-plugin-react-hooks';
 import importPlugin from 'eslint-plugin-import';
 import jsxA11y from 'eslint-plugin-jsx-a11y';
 import prettierPlugin from 'eslint-plugin-prettier';
-import prettierConfig from 'eslint-config-prettier';
+// import prettierConfig from 'eslint-config-prettier'; // Not needed for flat config, handled via "extends" normally
 
 export default [
   // Ignore build artifacts
@@ -16,11 +16,8 @@ export default [
     ignores: ['node_modules/**', 'dist/**', 'build/**', 'coverage/**'],
   },
 
-  // Disable ESLint rules that would conflict with Prettier
-  ...prettierConfig,
-
   {
-    files: ['**/*.{ts,tsx,js,jsx,json}'],
+    files: ['**/*.{ts,tsx,js,jsx}'],
     languageOptions: {
       parser: tsParser,
       parserOptions: {
@@ -48,7 +45,6 @@ export default [
       '@typescript-eslint/no-var-requires': 'off',
       '@typescript-eslint/explicit-module-boundary-types': 'off',
       semi: ['error', 'always'],
-      '@typescript-eslint/semi': ['error', 'always'],
 
       // React
       'react/prop-types': 'off',
@@ -59,6 +55,10 @@ export default [
 
       // Prettier formatting as lint rule
       'prettier/prettier': 'warn',
+      // Disable rules that conflict with Prettier formatting
+      'arrow-body-style': 'off',
+      'prefer-arrow-callback': 'off',
+      // For a full list of rules eslint-config-prettier disables, see their docs
     },
   },
 ];
