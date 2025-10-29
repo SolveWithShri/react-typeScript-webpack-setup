@@ -6,10 +6,10 @@ module.exports = {
   devtool: 'cheap-module-source-map',
   devServer: {
     hot: true,
-    open: true,
+    open: true, // Added this line
   },
   plugins: [
-    new ReactRefreshWebpackPlugin(),
+    new ReactRefreshWebpackPlugin(), // Added this line
     new webpack.DefinePlugin({
       "process.env.name": JSON.stringify("In Development"),
     }),
