@@ -8,7 +8,13 @@ export const App = () => {
     <>
       <h1>HI</h1>
       <img src={IMAGE} alt="React Logo" width={100} height={100} />
+      <br />
       <img src={IMAGE_SVG} alt="React Logo" width={100} height={100} />
+      <br />
+      <div>
+        <h1>process.env.name: {process.env.name}</h1>
+        <h1>process.env.NODE_ENV: {process.env.NODE_ENV}</h1>
+      </div>
     </>
   );
 };
