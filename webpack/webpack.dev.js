@@ -7,6 +7,7 @@ export default {
   devServer: {
     hot: true,
     open: true, // Added this line
+    historyApiFallback: true,
   },
   plugins: [
     new ReactRefreshWebpackPlugin(), // Added this line

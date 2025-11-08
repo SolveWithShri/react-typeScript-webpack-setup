@@ -28,7 +28,10 @@
 
 [Setup lint-staged and husky](https://www.youtube.com/watch?v=8b0OfT0vBsU&list=PLC3y8-rFHvwiWPS2RO3BKotLRfgg_8WEo&index=7)
 
-
 ### Commit 8 -
+
 [Typescript](https://www.youtube.com/playlist?list=PLC3y8-rFHvwi1AXijGTKM0BKtHzVC-LSK)
 
+### Commit 9 -
+
+[React Router](https://www.youtube.com/playlist?list=PLC3y8-rFHvwjkxt8TOteFdT_YmzwpBlrG)
